@@ -1,31 +1,40 @@
-// Hero animation
+// Humberger menu animation
 
-var slideIndex = 1;
-showSlides(slideIndex);
+// Animation class
+class Menu{
 
-// Next/previous controls
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("slider");
-  var dots = document.getElementsByClassName("line");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
+  // Getting all the selectors
+  constructor(){
+    this.ham = ham
+    this.menuTop = menuTop;
+    this.menuMiddle = menuMiddle;
+    this.menuBottom = menuBottom;
   }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
+
+  init(){
+    this.bindUIactions();
   }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-  setTimeout(showSlides, 2000);
+
+  bindUIactions(){
+    this.ham.addEventListener('click', event =>{
+      event.preventDefault();
+      this.activateMenu(event);
+      console.log({Menu});
+    })
+  }
+
+  // Adding classes
+  activateMenu(){
+    this.menuTop.classList.toggle('menu-top-click');
+    this.menuMiddle.classList.toggle('menu-middle-click');
+    this.menuBottom.classList.toggle('menu-bottom-click');
+  }
 }
+
+const ham = document.querySelector('.menu');
+const menuTop = document.querySelector('.menu-top');
+const menuMiddle = document.querySelector('.menu-middle');
+const menuBottom = document.querySelector('.menu-bottom');
+
+const menu = new Menu(ham, menuTop, menuMiddle, menuBottom);
+menu.init();
