@@ -1,3 +1,6 @@
+html{
+  font-size: 100%;
+}
 *{
   padding: 0;
   margin: 0;
@@ -17,6 +20,9 @@ a{
 a:focus{
   outline: none;
 }
+a:hover{
+  text-decoration: none!important;
+}
 .fixed{
   position: fixed;
 }
@@ -34,8 +40,8 @@ body{
   margin: 0;
   background-color: var(--background-color);
   color: var(--tertiary-color-dark);
-  font-size: 1.11111vw;
-  font-family: 'Montserrat', 'Work sans', sans-serif;
+  font-size: 1.11111vw!important;
+  font-family: 'Montserrat', 'Work sans', sans-serif!important;
   min-height: 100%;
   max-width: 100%;
   vertical-align: baseline;
@@ -57,8 +63,8 @@ header{
   width: 100%;
   display: inline-block;
   vertical-align: middle;
-  position: relative;
-  z-index: 110;
+  position: fixed;
+  z-index: 1000;
   -webkit-backface-visibility: hidden;
 }
 .header{
@@ -80,7 +86,6 @@ header{
   height: 80px;
   justify-content: space-between;
   padding: 0 6.4vw;
-  position: fixed;
   width: 100%;
   z-index: 1001;
   transition: all .3s ease 0s!important
@@ -99,7 +104,7 @@ header{
 }
 .header>div>div .co-nav ul a {
   position: relative;
-  color: #68777d;
+  color: #fff;
   display: inline-block;
   padding: 20px;
   text-decoration: none;
@@ -116,6 +121,28 @@ div.content .co-slider{
   overflow: hidden;
   position: relative;
   z-index: 10;
+}
+
+div.co-booking{
+  width: 70px;
+  position: fixed;
+  background: #fff;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+}
+div.co-booking > div.co-cta{
+  transform: rotateY(40deg);
+}
+div.co-booking > div.co-cta > a{
+  padding: 10px 30px;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  text-transform: capitalize;
+  font-weight: 600;
 }
 @media (min-width: 768px){
   .header>div>div {
