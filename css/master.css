@@ -162,9 +162,21 @@ header{
 }
 .co-nav{
   display: block;
+  margin-top: 45px;
+  color: var(--background-color);
+}
+.co-nav ul{
+  list-style: none;
 }
 .co-nav ul li{
   width: 100%;
+  padding: 10px;
+}
+.co-nav ul li a{
+  padding: 10px;
+  font-weight: bold;
+  text-align: center;
+  color: inherit;
 }
 .open{
   right: 0;
