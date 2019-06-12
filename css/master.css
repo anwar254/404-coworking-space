@@ -106,7 +106,7 @@ header{
   backface-visibility: hidden;
   position: absolute;
   left: 0;
-  border-top: 1px solid var(--primary-color);
+  border-top: 2px solid var(--primary-color);
   width: 100%;
   transition: 0.55s;
 }
@@ -148,7 +148,24 @@ header{
   transition: right cubic-bezier(0.59, 0.04, 0.57, 0.99) .5s;
   z-index: ;
 }
-
+.drawer-container{
+  margin-top: 7em;
+}
+.co-title{
+  color: var(--background-color);
+}
+.co-title .title{
+  color: inherit;
+  font-size:  18px;
+  font-weight: bolder;
+  text-align: center;
+}
+.co-nav{
+  display: block;
+}
+.co-nav ul li{
+  width: 100%;
+}
 .open{
   right: 0;
 }
