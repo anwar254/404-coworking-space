@@ -9,6 +9,7 @@ class Menu{
     this.menuTop = menuTop;
     this.menuMiddle = menuMiddle;
     this.menuBottom = menuBottom;
+    this.drawer = drawer;
   }
 
   init(){
@@ -19,7 +20,11 @@ class Menu{
     this.ham.addEventListener('click', event =>{
       event.preventDefault();
       this.activateMenu(event);
-      console.log({Menu});
+      if (this.drawer.classList == 'open'){
+        this.drawer.classList.remove('open');
+      }else{
+        this.drawer.classList.toggle('open');
+      }
     })
   }
 
@@ -35,6 +40,6 @@ const ham = document.querySelector('.menu');
 const menuTop = document.querySelector('.menu-top');
 const menuMiddle = document.querySelector('.menu-middle');
 const menuBottom = document.querySelector('.menu-bottom');
-
-const menu = new Menu(ham, menuTop, menuMiddle, menuBottom);
+const drawer = document.querySelector('.co-menu-drower');
+const menu = new Menu(ham, menuTop, menuMiddle, menuBottom, drawer);
 menu.init();

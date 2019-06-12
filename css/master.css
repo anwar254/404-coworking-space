@@ -47,6 +47,7 @@ body{
   vertical-align: baseline;
   outline: 0;
   white-space: nowrap;
+  overflow: hidden;
 }
 .co-main-wrapper{
   width: 100%;
@@ -97,14 +98,15 @@ header{
   margin: 0 auto;
   padding-left: 1.25em;
   position: relative;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 20px;
+  z-index: 9999;
 }
 .menu-global {
   backface-visibility: hidden;
   position: absolute;
   left: 0;
-  border-top: 2px solid var(--tertiary-color-dark);
+  border-top: 1px solid var(--primary-color);
   width: 100%;
   transition: 0.55s;
 }
@@ -112,16 +114,17 @@ header{
   top: 0;
 }
 .menu-middle {
-  top: 10px;
+  top: 7px;
 }
 .menu-bottom {
-  top: 20px;
+  top: 14px;
 }
 .menu-top-click {
   backface-visibility: hidden;
   top: 15px;
   transform: rotate(50deg);
   transition: 0.55s 0.5s;
+  background-color: var(--background-color)!important;
 }
 .menu-middle-click {
   opacity: 0;
@@ -131,4 +134,21 @@ header{
   top: 15px;
   transform: rotate(-410deg);
   transition: 0.55s 0.5s;
+  background-color: var(--background-color)!important;
+}
+
+.co-menu-drower{
+  width: 30%;
+  height: 100vh;
+  display: block;
+  background: var(--tertiary-color-dark);
+  padding: 20px;
+  position: absolute;
+  right: -397px;
+  transition: right cubic-bezier(0.59, 0.04, 0.57, 0.99) .5s;
+  z-index: ;
+}
+
+.open{
+  right: 0;
 }
