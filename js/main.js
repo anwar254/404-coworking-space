@@ -41,5 +41,5 @@ const menuTop = document.querySelector('.menu-top');
 const menuMiddle = document.querySelector('.menu-middle');
 const menuBottom = document.querySelector('.menu-bottom');
 const drawer = document.querySelector('.co-menu-drower');
-const menu = new Menu(ham, menuTop, menuMiddle, menuBottom, drawer);
+const menu = new Menu();
 menu.init();

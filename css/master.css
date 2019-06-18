@@ -13,6 +13,11 @@ html{
   --tertiary-color-light: #2c365d;
   --tertiary-color-dark: #272e4f;
 }
+.row {
+  width: 94%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 a{
   text-decoration: none;
   color: var(--tertiary-color-dark);
@@ -45,9 +50,9 @@ body{
   min-height: 100%;
   max-width: 100%;
   vertical-align: baseline;
+  transform-style: preserve-3d;
   outline: 0;
-  white-space: nowrap;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 .co-main-wrapper{
   width: 100%;
@@ -91,7 +96,56 @@ header{
   z-index: 1001;
   transition: all .3s ease 0s!important
 }
+/*Branding area*/
 
+#logo {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  padding-right: 2rem;
+  z-index: 300;
+}
+#logo .logo-text {
+  position: relative;
+  font-size: 2rem;
+  font-weight: 300;
+  color: var(--background-color);
+}
+#logo:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 1px;
+  background-color: #fff;
+}
+
+#hero-slider #logo:after {
+  transform: scaleY(0);
+  transform-origin: 50% 0;
+  transition: transform 0.35s cubic-bezier(0.694, 0, 0.335, 1);
+}
+#hero-slider .logo-text {
+  display: block;
+  transform: translate3d(120%, 0, 0);
+  opacity: 0;
+  transition: transform .8s .2s, opacity .5s .2s;
+}
+.line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 12px;
+  width: 100%;
+  background: var(--tertiary-color-dark);
+}
+#hero-slider.ready #logo:after {
+  transform: scaleY(1);
+}
+#hero-slider.ready .line {
+  transform: scaleX(1);
+}
 /*Humberger menu*/
 .menu {
   cursor: pointer;
@@ -138,15 +192,15 @@ header{
 }
 
 .co-menu-drower{
-  width: 30%;
+  width: 28%;
   height: 100vh;
   display: block;
   background: var(--tertiary-color-dark);
   padding: 20px;
-  position: absolute;
-  right: -397px;
+  position: fixed;
+  right: -365px;
   transition: right cubic-bezier(0.59, 0.04, 0.57, 0.99) .5s;
-  z-index: ;
+  /* z-index:  999; */
 }
 .drawer-container{
   margin-top: 7em;
@@ -158,7 +212,6 @@ header{
   color: inherit;
   font-size:  18px;
   font-weight: bolder;
-  text-align: center;
 }
 .co-nav{
   display: block;
@@ -175,9 +228,97 @@ header{
 .co-nav ul li a{
   padding: 10px;
   font-weight: bold;
-  text-align: center;
+  font-size: 40px;
   color: inherit;
 }
 .open{
-  right: 0;
+  right: 0px;
+  overflow: hidden;
+}
+.carousel-container{
+  width: 100%;
+  height: 100%;
+  min-height: 786px;
+  background-color: transparent;
+  position: relative;
+  display: table;
+  background-image: url(https://images.unsplash.com/photo-1524691327497-ee85f53c40f4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=584&q=80);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  z-index: -1;
+}
+.carousel-container .overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: .6;
+  background-color: #000;
+}
+.carousel-container .shadow-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .4;
+    background: -moz-linear-gradient(top,transparent 0%,rgba(0,0,0,0.8) 100%);
+    background: -webkit-linear-gradient(top,transparent 0%,rgba(0,0,0,0.8) 100%);
+    background: linear-gradient(to bottom,transparent 0%,rgba(0,0,0,0.8) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000',endColorstr='#cc000000',GradientType=0);
+}
+.home-content {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    padding-bottom: 15.6rem;
+    position: relative;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+}
+.home-content h3 {
+    font-family: montserrat-medium,sans-serif;
+    font-size: 1.6rem;
+    color: rgba(255,255,255,.5);
+    text-transform: uppercase;
+    letter-spacing: .3rem;
+    position: relative;
+    margin-top: 0;
+    margin-bottom: 1.2rem;
+    margin-left: 6px;
+}
+html.cl-loaded .home-content__main {
+    animation-duration: 2s;
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+}
+.home-content__main {
+    padding-top: 10rem;
+    position: relative;
+}
+.home-content h1 {
+    font-family: inherit;
+    font-size: 4.3rem;
+    font-weight: bolder;
+    margin-top: 0;
+    color: #fff;
+}
+section.co-about{
+  width: 100%;
+  padding: 500px 20px;
+  background-color: var(--primary-color);
+  z-index: 2;
+}
+
+
+
+
+
+@media only screen and (max-width: 1500px){
+.home-content__main {
+    max-width: 1000px;
 }
