@@ -246,6 +246,7 @@ header{
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+  background-position-y: 0;
   z-index: -1;
 }
 .carousel-container .overlay{
@@ -301,7 +302,6 @@ html.cl-loaded .home-content__main {
     position: relative;
 }
 .home-content h1 {
-    font-family: inherit;
     font-size: 4.3rem;
     font-weight: bolder;
     margin-top: 0;
@@ -309,9 +309,12 @@ html.cl-loaded .home-content__main {
 }
 section.co-about{
   width: 100%;
-  padding: 500px 20px;
-  background-color: var(--primary-color);
+  background-color: var(--background-color);
   z-index: 2;
+  padding-top: 16.2rem;
+  padding-bottom: 9rem;
+  color: var(--tertiary-color-dark);
+  position: relative;
 }
 
 
