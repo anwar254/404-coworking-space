@@ -154,7 +154,7 @@ header{
   position: relative;
   width: 30px;
   height: 20px;
-  z-index: 9999;
+  z-index: 1000!important;
 }
 .menu-global {
   backface-visibility: hidden;
@@ -309,16 +309,47 @@ html.cl-loaded .home-content__main {
 }
 section.co-about{
   width: 100%;
-  background-color: var(--background-color);
+  background-color: var(--primary-color);
   z-index: 2;
-  padding-top: 16.2rem;
-  padding-bottom: 9rem;
+  padding-top: 5.2rem;
+  padding-bottom: 3rem;
   color: var(--tertiary-color-dark);
   position: relative;
+  z-index: -1;
 }
-
-
-
+section.co-about .about-container{
+  display: flex;
+}
+section.co-about .about-sec{
+  width: 100%;
+  color: #ffffff;
+  font-family: "Montserrat", Sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  text-transform: capitalize;
+  font-style: normal;
+  text-decoration: none;
+  letter-spacing: 0px;
+}
+section.co-about .about-sec h3{
+  font-weight: lighter;
+  color: #fff;
+  margin: 7px;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+section.co-about .about-sec h1{
+  font-weight: bolder;
+  font-size: 37px;
+  color: #fff;
+  margin: 7px;
+}
+section.co-about .about-sec p{
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 26px;
+  margin-bottom: 15px;
+}
 
 
 @media only screen and (max-width: 1500px){
